@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/5 | 来醉一场</title>
+  <title>(08) SpringBoot 之组合注解 | 来醉一场</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="来醉一场">
-<meta property="og:url" content="http://yoursite.com/archives/2019/05/index.html">
+  <meta name="description" content="SpringBoot应用开发，会大量的使用注解，有些注解会经常一起使用，如果能通过一个组合注解进行包装则能够简化代码，并且还会避免因为少了某些注解而报错 一、 常见的组合注解1. @SpringBootApplication该注解是SpringBoot项目的核心注解，该注解包含：  @SpringBootConfiguration @EnableAutoConfiguration @Compone">
+<meta name="keywords" content="SpringBoot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(08) SpringBoot 之组合注解">
+<meta property="og:url" content="http://yoursite.com/2019/05/20/SpringBoot/08-SpringBoot-之组合注解/index.html">
 <meta property="og:site_name" content="来醉一场">
+<meta property="og:description" content="SpringBoot应用开发，会大量的使用注解，有些注解会经常一起使用，如果能通过一个组合注解进行包装则能够简化代码，并且还会避免因为少了某些注解而报错 一、 常见的组合注解1. @SpringBootApplication该注解是SpringBoot项目的核心注解，该注解包含：  @SpringBootConfiguration @EnableAutoConfiguration @Compone">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-05-20T02:48:53.381Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="来醉一场">
+<meta name="twitter:title" content="(08) SpringBoot 之组合注解">
+<meta name="twitter:description" content="SpringBoot应用开发，会大量的使用注解，有些注解会经常一起使用，如果能通过一个组合注解进行包装则能够简化代码，并且还会避免因为少了某些注解而报错 一、 常见的组合注解1. @SpringBootApplication该注解是SpringBoot项目的核心注解，该注解包含：  @SpringBootConfiguration @EnableAutoConfiguration @Compone">
   
     <link rel="alternative" href="/atom.xml" title="来醉一场" type="application/atom+xml">
   
@@ -160,302 +165,112 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-SpringBoot/08-SpringBoot-之组合注解" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/Java/02-Future模式之CompletableFuture/" class="archive-article-date">
-  	<time datetime="2019-05-20T02:29:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/Java/02-Future模式之CompletableFuture/">(02) Future模式之CompletableFuture</a>
+    <h1 class="article-title" itemprop="name">
+      (08) SpringBoot 之组合注解
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/Java/01-BigDecimal-详解/" class="archive-article-date">
-  	<time datetime="2019-05-20T02:29:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/Java/01-BigDecimal-详解/">(01) BigDecimal 详解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/SpringBoot/13-SpringBoot-动手写一个Start/" class="archive-article-date">
-  	<time datetime="2019-05-20T02:27:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/SpringBoot/13-SpringBoot-动手写一个Start/">(13) SpringBoot 动手写一个Start</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/SpringBoot/12-SpringBoot-之事件-Event/" class="archive-article-date">
-  	<time datetime="2019-05-20T02:26:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/SpringBoot/12-SpringBoot-之事件-Event/">(12) SpringBoot 之事件(Event)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/SpringBoot/11-SpringBoot-@EnableAutoConfiguration/" class="archive-article-date">
-  	<time datetime="2019-05-20T02:25:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/SpringBoot/11-SpringBoot-@EnableAutoConfiguration/">(11) SpringBoot @EnableAutoConfiguration</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/SpringBoot/10-SpringBoot-@Enable 与@Import 注解/" class="archive-article-date">
-  	<time datetime="2019-05-20T02:23:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/SpringBoot/10-SpringBoot-@Enable 与@Import 注解/">(10) SpringBoot @Enable* 与@ Import注解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/SpringBoot/09-SpringBoot-之条件注解/" class="archive-article-date">
-  	<time datetime="2019-05-20T02:22:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/SpringBoot/09-SpringBoot-之条件注解/">(09) SpringBoot 之条件注解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/SpringBoot/08-SpringBoot-之组合注解/" class="archive-article-date">
+        
+        <a href="/2019/05/20/SpringBoot/08-SpringBoot-之组合注解/" class="archive-article-date">
   	<time datetime="2019-05-20T02:22:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/SpringBoot/08-SpringBoot-之组合注解/">(08) SpringBoot 之组合注解</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>SpringBoot应用开发，会大量的使用注解，有些注解会经常一起使用，如果能通过一个组合注解进行包装则能够简化代码，并且还会避免因为少了某些注解而报错</p>
+<h3 id="一、-常见的组合注解"><a href="#一、-常见的组合注解" class="headerlink" title="一、 常见的组合注解"></a>一、 常见的组合注解</h3><h4 id="1-SpringBootApplication"><a href="#1-SpringBootApplication" class="headerlink" title="1. @SpringBootApplication"></a>1. @SpringBootApplication</h4><p>该注解是SpringBoot项目的核心注解，该注解包含：</p>
+<ul>
+<li>@SpringBootConfiguration</li>
+<li>@EnableAutoConfiguration</li>
+<li>@ComponentScan<a id="more"></a>
+@SpringBootApplication 注解就有了自动配置功能 、扫描包功能。</li>
+</ul>
+<p>@EnableAutoConfiguration 让SpringBoot根据类路径中的jar包依赖为当前项目进行自动配置。例如，添加spring-boot-starter-web依赖，会自动添加tomcat和SpringMVC的依赖，SpringBoot 会对Tomcat和SpringMVC进行自动配置</p>
+<p>@ComponentScan 会自动扫描@SpringBootApplication所在类的同级包以及子包的Bean。所以建议入口类放在groupId+artifactId组合下，或者groupId下。</p>
+<p>在SpringBoot项目启动类上用这三个注解替换@SpringBootApplication也是可以的</p>
+<h4 id="2-Configuration"><a href="#2-Configuration" class="headerlink" title="2. @Configuration"></a>2. @Configuration</h4><p>该注解包含@Component注解，该注解不单标注该类是一个配置类，而且声明该类是一个Bean</p>
+<h4 id="3-Enable"><a href="#3-Enable" class="headerlink" title="3. @Enable*"></a>3. @Enable*</h4><p>@Enable* 类的注解都有一个@Import注解，该注解是用来导入配置类的，其实就是导入了一些自动配置的Bean，有以下三类：</p>
+<ol>
+<li><p>直接导入配置类</p>
+<p> 导入一个有 @Configuration的Bean</p>
+</li>
+<li><p>依据条件选择配置类</p>
+<p> 导入一个实现了ImportSelector接口的配置类</p>
+</li>
+<li><p>动态注册Bean</p>
+<p> 导入一个实现了ImportBeanDefinitionRegistrar接口的配置类</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>本文不做深入探讨，会另出一篇关于@Import的使用</strong></p>
+</blockquote>
+<h3 id="二、自定义组合注解"><a href="#二、自定义组合注解" class="headerlink" title="二、自定义组合注解"></a>二、自定义组合注解</h3><p>我们在配置类上加@ComponentScan时还会写@Configuration我们可以写一个组合注解</p>
+<ol>
+<li>组合注解<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.TYPE)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@ComponentScan</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> ComponentScanConfig &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//这个必须写，覆盖@ComponentScan的注解value的值</span></span><br><span class="line">    String[] value() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>【注】String[] value() default {}; 是为了覆盖@ComponentScan的注解value的值</p>
+</blockquote>
+<ol start="2">
+<li><p>service</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CombinationAnnotationTestService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doSth</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"doSth...."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ComponentScanConfig</span>(<span class="string">"com.jiuxian.combination"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CombinationAnnotationConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> CombinationAnnotationTestService <span class="title">combinationTestService</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> CombinationAnnotationTestService();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试</p>
+</li>
+</ol>
+<p>(1)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        AnnotationConfigApplicationContext context = <span class="keyword">new</span> AnnotationConfigApplicationContext(CombinationAnnotationConfig.class);</span><br><span class="line">        CombinationAnnotationTestService service = context.getBean(CombinationAnnotationTestService.class);</span><br><span class="line">        service.doSth();</span><br><span class="line">        context.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>(2)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith</span>(SpringRunner.class)</span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringbootAnnotationsApplicationTests</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> CombinationAnnotationTestService combinationAnnotationTestService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">combinationTest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        combinationAnnotationTestService.doSth();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol start="5">
+<li>结果<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">doSth....</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="三、GitHub源码"><a href="#三、GitHub源码" class="headerlink" title="三、GitHub源码"></a>三、GitHub源码</h3><p><a href="https://github.com/Zejun-Liu/SpringBoot2.0/tree/master/springboot-annotations" target="_blank" rel="noopener">GitHub源码</a></p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin_pay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -467,98 +282,127 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/20/SpringBoot/08-SpringBoot-之组合注解/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/SpringBoot/07-SpringBoot-如何让yml-properties配置文件有提示/" class="archive-article-date">
-  	<time datetime="2019-05-20T02:21:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/05/20/SpringBoot/09-SpringBoot-之条件注解/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (09) SpringBoot 之条件注解
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/20/SpringBoot/07-SpringBoot-如何让yml-properties配置文件有提示/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">(07) SpringBoot 如何让yml,properties配置文件有提示</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/SpringBoot/07-SpringBoot-如何让yml-properties配置文件有提示/">(07) SpringBoot 如何让yml,properties配置文件有提示</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、-常见的组合注解"><span class="toc-number">1.</span> <span class="toc-text">一、 常见的组合注解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-SpringBootApplication"><span class="toc-number">1.1.</span> <span class="toc-text">1. @SpringBootApplication</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Configuration"><span class="toc-number">1.2.</span> <span class="toc-text">2. @Configuration</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Enable"><span class="toc-number">1.3.</span> <span class="toc-text">3. @Enable*</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、自定义组合注解"><span class="toc-number">2.</span> <span class="toc-text">二、自定义组合注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、GitHub源码"><span class="toc-number">3.</span> <span class="toc-text">三、GitHub源码</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/SpringBoot/06-SpringBoot-Aop的使用/" class="archive-article-date">
-  	<time datetime="2019-05-20T02:20:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/SpringBoot/06-SpringBoot-Aop的使用/">(06) SpringBoot Aop的使用</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2019/05/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/05/page/2/">Next &raquo;</a>
-    </nav>
+  
+
   
 
 
@@ -582,8 +426,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

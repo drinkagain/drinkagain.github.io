@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/5 | 来醉一场</title>
+  <title>(2) SpringBoot 对多线程的支持 | 来醉一场</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="来醉一场">
-<meta property="og:url" content="http://yoursite.com/archives/2019/05/index.html">
+  <meta name="description" content="&amp;emsp;&amp;emsp;我们在实际项目中有些复杂运算、耗时操作，就可以利用多线程来充分利用CPU，提高系统吞吐量。SpringBoot对多线程支持非常好，对我们的开发非常便捷。 1.需要的注解 &amp;emsp;springboot 配置多线程需要两个注解">
+<meta name="keywords" content="SpringBoot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(2) SpringBoot 对多线程的支持">
+<meta property="og:url" content="http://yoursite.com/2019/05/20/SpringBoot/02-SpringBoot-对多线程的支持/index.html">
 <meta property="og:site_name" content="来醉一场">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;我们在实际项目中有些复杂运算、耗时操作，就可以利用多线程来充分利用CPU，提高系统吞吐量。SpringBoot对多线程支持非常好，对我们的开发非常便捷。 1.需要的注解 &amp;emsp;springboot 配置多线程需要两个注解">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-05-20T02:49:43.758Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="来醉一场">
+<meta name="twitter:title" content="(2) SpringBoot 对多线程的支持">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;我们在实际项目中有些复杂运算、耗时操作，就可以利用多线程来充分利用CPU，提高系统吞吐量。SpringBoot对多线程支持非常好，对我们的开发非常便捷。 1.需要的注解 &amp;emsp;springboot 配置多线程需要两个注解">
   
     <link rel="alternative" href="/atom.xml" title="来醉一场" type="application/atom+xml">
   
@@ -160,112 +165,78 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-SpringBoot/02-SpringBoot-对多线程的支持" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      (2) SpringBoot 对多线程的支持
+    </h1>
+  
+
+        
+        <a href="/2019/05/20/SpringBoot/02-SpringBoot-对多线程的支持/" class="archive-article-date">
+  	<time datetime="2019-05-20T02:16:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&emsp;&emsp;我们在实际项目中有些复杂运算、耗时操作，就可以利用多线程来充分利用CPU，提高系统吞吐量。SpringBoot对多线程支持非常好，对我们的开发非常便捷。<br></p>
+<h3 id="1-需要的注解"><a href="#1-需要的注解" class="headerlink" title="1.需要的注解"></a>1.需要的注解</h3><p> &emsp;springboot 配置多线程需要两个注解<br> <a id="more"></a></p>
+<ol>
+<li>@EnableAsync<br><br> 在配置类中通过加@EnableAsync开启对异步任务的支持</li>
+<li>@Async<br><br> 在需要执行的方法上加@Async表明该方法是个异步方法，如果加在类级别上，则表明类所有的方法都是异步方法<h3 id="2-配置代码"><a href="#2-配置代码" class="headerlink" title="2.配置代码"></a>2.配置代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableAsync</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AsyncConfig</span> <span class="keyword">implements</span> <span class="title">AsyncConfigurer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Executor <span class="title">getAsyncExecutor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ThreadPoolTaskExecutor taskExecutor = <span class="keyword">new</span> ThreadPoolTaskExecutor();</span><br><span class="line">        <span class="comment">//核心线程数</span></span><br><span class="line">        taskExecutor.setCorePoolSize(<span class="number">8</span>);</span><br><span class="line">        <span class="comment">//最大线程数</span></span><br><span class="line">        taskExecutor.setMaxPoolSize(<span class="number">16</span>);</span><br><span class="line">        <span class="comment">//队列大小</span></span><br><span class="line">        taskExecutor.setQueueCapacity(<span class="number">100</span>);</span><br><span class="line">        taskExecutor.initialize();</span><br><span class="line">        <span class="keyword">return</span> taskExecutor;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="3-Service"><a href="#3-Service" class="headerlink" title="3.Service"></a>3.Service</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AsyncService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Async</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">executeAsync1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Thread.sleep(<span class="number">20</span>);</span><br><span class="line">        System.out.println(<span class="string">"异步任务::1"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Async</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">executeAsync2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"异步任务::2"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>【注】这里的方法自动被注入使用上文配置的ThreadPoolTaskExecutor</p>
+</blockquote>
+<h3 id="4-测试代码"><a href="#4-测试代码" class="headerlink" title="4.测试代码"></a>4.测试代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Resource</span></span><br><span class="line"><span class="keyword">private</span> AsyncService asyncService;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">asyncTest</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">        asyncService.executeAsync1();</span><br><span class="line">        asyncService.executeAsync2();</span><br><span class="line">    &#125;</span><br><span class="line">    Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-运行结果"><a href="#5-运行结果" class="headerlink" title="5.运行结果"></a>5.运行结果</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">异步任务::2</span><br><span class="line">异步任务::2</span><br><span class="line">异步任务::2</span><br><span class="line">异步任务::2</span><br><span class="line">异步任务::2</span><br><span class="line">异步任务::2</span><br><span class="line">异步任务::2</span><br><span class="line">异步任务::1</span><br><span class="line">异步任务::1</span><br><span class="line">异步任务::1</span><br><span class="line">异步任务::1</span><br><span class="line">异步任务::1</span><br><span class="line">异步任务::1</span><br><span class="line">异步任务::1</span><br><span class="line">异步任务::1</span><br><span class="line">异步任务::2</span><br><span class="line">异步任务::2</span><br><span class="line">异步任务::2</span><br><span class="line">异步任务::1</span><br><span class="line">异步任务::1</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>【注】本文基于SpringBoot 2.0</p>
+</blockquote>
+<p><a href="https://github.com/drinkagain/SpringBoot/blob/master/springboot-future/Readme.md" target="_blank" rel="noopener">GitHub 连接</a></p>
+<p><br><br>感谢《Spring Boot实战 JavaEE开发的颠覆者》</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin_pay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/Java/02-Future模式之CompletableFuture/" class="archive-article-date">
-  	<time datetime="2019-05-20T02:29:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/Java/02-Future模式之CompletableFuture/">(02) Future模式之CompletableFuture</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/Java/01-BigDecimal-详解/" class="archive-article-date">
-  	<time datetime="2019-05-20T02:29:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/Java/01-BigDecimal-详解/">(01) BigDecimal 详解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/SpringBoot/13-SpringBoot-动手写一个Start/" class="archive-article-date">
-  	<time datetime="2019-05-20T02:27:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/SpringBoot/13-SpringBoot-动手写一个Start/">(13) SpringBoot 动手写一个Start</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -277,288 +248,127 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/20/SpringBoot/02-SpringBoot-对多线程的支持/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/SpringBoot/12-SpringBoot-之事件-Event/" class="archive-article-date">
-  	<time datetime="2019-05-20T02:26:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/05/20/SpringBoot/03-SpringBoot-对Future模式的支持/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (03) SpringBoot 对Future模式的支持
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/20/SpringBoot/01-SpringBoot-EL获取配置文件中的值的方式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">(01)SpringBoot EL获取配置文件中的值的方式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/SpringBoot/12-SpringBoot-之事件-Event/">(12) SpringBoot 之事件(Event)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-需要的注解"><span class="toc-number">1.</span> <span class="toc-text">1.需要的注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-配置代码"><span class="toc-number">2.</span> <span class="toc-text">2.配置代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Service"><span class="toc-number">3.</span> <span class="toc-text">3.Service</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-测试代码"><span class="toc-number">4.</span> <span class="toc-text">4.测试代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-运行结果"><span class="toc-number">5.</span> <span class="toc-text">5.运行结果</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/SpringBoot/11-SpringBoot-@EnableAutoConfiguration/" class="archive-article-date">
-  	<time datetime="2019-05-20T02:25:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/SpringBoot/11-SpringBoot-@EnableAutoConfiguration/">(11) SpringBoot @EnableAutoConfiguration</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/SpringBoot/10-SpringBoot-@Enable 与@Import 注解/" class="archive-article-date">
-  	<time datetime="2019-05-20T02:23:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/SpringBoot/10-SpringBoot-@Enable 与@Import 注解/">(10) SpringBoot @Enable* 与@ Import注解</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/SpringBoot/09-SpringBoot-之条件注解/" class="archive-article-date">
-  	<time datetime="2019-05-20T02:22:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/SpringBoot/09-SpringBoot-之条件注解/">(09) SpringBoot 之条件注解</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/SpringBoot/08-SpringBoot-之组合注解/" class="archive-article-date">
-  	<time datetime="2019-05-20T02:22:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/SpringBoot/08-SpringBoot-之组合注解/">(08) SpringBoot 之组合注解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/SpringBoot/07-SpringBoot-如何让yml-properties配置文件有提示/" class="archive-article-date">
-  	<time datetime="2019-05-20T02:21:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/SpringBoot/07-SpringBoot-如何让yml-properties配置文件有提示/">(07) SpringBoot 如何让yml,properties配置文件有提示</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/SpringBoot/06-SpringBoot-Aop的使用/" class="archive-article-date">
-  	<time datetime="2019-05-20T02:20:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/SpringBoot/06-SpringBoot-Aop的使用/">(06) SpringBoot Aop的使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2019/05/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/05/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -582,8 +392,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -57,9 +57,9 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/随笔/">随笔</a></li>
-	        
 				<li><a href="/tags/SpringBoot/">SpringBoot</a></li>
+	        
+				<li><a href="/tags/Java">Java</a></li>
 	        
 			</ul>
 		</nav>
@@ -143,9 +143,9 @@
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/随笔/">随笔</a></li>
-		        
 					<li style="width: 33.333333333333336%"><a href="/tags/SpringBoot/">SpringBoot</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/tags/Java">Java</a></li>
 		        
 				</ul>
 			</nav>
@@ -162,36 +162,31 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java/02-Future模式之CompletableFuture" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/20/hello-world/">Hello World</a>
+      <a class="article-title" href="/2019/05/20/Java/02-Future模式之CompletableFuture/">(02) Future模式之CompletableFuture</a>
     </h1>
   
 
         
-        <a href="/2019/05/20/hello-world/" class="archive-article-date">
-  	<time datetime="2019-05-20T01:19:25.703Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
+        <a href="/2019/05/20/Java/02-Future模式之CompletableFuture/" class="archive-article-date">
+  	<time datetime="2019-05-20T02:29:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        <p>CompletableFuture 是Java 8 新增加的Api,该类实现，Future和CompletionStage两个接口，提供了非常强大的Future的扩展功能，可以帮助我们简化异步编程的复杂性，提供了函数式编程的能力，可以通过回调的方式处理计算结果，并且提供了转换和组合CompletableFuture的方法。</p>
+<h3 id="一、主动完成计算"><a href="#一、主动完成计算" class="headerlink" title="一、主动完成计算"></a>一、主动完成计算</h3>
+        
+          <a class="article-more-a" href="/2019/05/20/Java/02-Future模式之CompletableFuture/#more">more >></a>
+        
       
 
       
@@ -199,11 +194,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/20/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/20/Java/02-Future模式之CompletableFuture/">展开全文 >></a>
         </p>
       
 
@@ -233,6 +239,732 @@
 
 
   
+    <article id="post-Java/01-BigDecimal-详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/20/Java/01-BigDecimal-详解/">(01) BigDecimal 详解</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/20/Java/01-BigDecimal-详解/" class="archive-article-date">
+  	<time datetime="2019-05-20T02:29:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、常用方法"><a href="#一、常用方法" class="headerlink" title="一、常用方法"></a>一、常用方法</h3><ol>
+<li>初始化数据方法<ul>
+<li>new BigDecimal() 传参支持 integer,long,double,float,BigInteger</li>
+<li>BigDecimal.ZERO  初始化一个为0的BigDecimal对象</li>
+<li>BigDecimal.ONE 初始化一个为1的BigDecimal对象</li>
+<li>BigDecimal.TEN 初始化一个为10的BigDecimal对象<blockquote>
+<p>【注意】new BigDecimal()方法初始化一个浮点型数据时，需要显示设置Scale(精度)否则运算时可能会有精度问题(这个和BigDecimal 默认精度有关)，如果转成String再初始化，将不受影响</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+        
+          <a class="article-more-a" href="/2019/05/20/Java/01-BigDecimal-详解/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/20/Java/01-BigDecimal-详解/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-SpringBoot/13-SpringBoot-动手写一个Start" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/20/SpringBoot/13-SpringBoot-动手写一个Start/">(13) SpringBoot 动手写一个Start</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/20/SpringBoot/13-SpringBoot-动手写一个Start/" class="archive-article-date">
+  	<time datetime="2019-05-20T02:27:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我们在使用SpringBoot 项目时，引入一个springboot start依赖，只需要很少的代码，或者不用任何代码就能直接使用默认配置，再也不用那些繁琐的配置了，感觉特别神奇。我们自己也动手写一个start.</p>
+<h3 id="一、新建一个-Start-的-Maven-项目"><a href="#一、新建一个-Start-的-Maven-项目" class="headerlink" title="一、新建一个 Start 的 Maven 项目"></a>一、新建一个 Start 的 Maven 项目</h3>
+        
+          <a class="article-more-a" href="/2019/05/20/SpringBoot/13-SpringBoot-动手写一个Start/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/20/SpringBoot/13-SpringBoot-动手写一个Start/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-SpringBoot/12-SpringBoot-之事件-Event" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/20/SpringBoot/12-SpringBoot-之事件-Event/">(12) SpringBoot 之事件(Event)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/20/SpringBoot/12-SpringBoot-之事件-Event/" class="archive-article-date">
+  	<time datetime="2019-05-20T02:26:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Spring 官方文档翻译如下 ：</p>
+<p><em>ApplicationContext 通过 ApplicationEvent 类和 ApplicationListener 接口进行事件处理。 如果将实现 ApplicationListener 接口的 bean 注入到上下文中，则每次使用 ApplicationContext 发布 ApplicationEvent 时，都会通知该 bean。 本质上，这是标准的观察者设计模式。</em></p>
+<p>Spring的事件（Application Event）其实就是一个观察者设计模式，一个 Bean 处理完成任务后希望通知其它 Bean 或者说 一个Bean 想观察监听另一个Bean的行为。<br>
+        
+          <a class="article-more-a" href="/2019/05/20/SpringBoot/12-SpringBoot-之事件-Event/#more">more >></a>
+        
+      
+
+      
+    </p></div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/20/SpringBoot/12-SpringBoot-之事件-Event/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-SpringBoot/11-SpringBoot-@EnableAutoConfiguration" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/20/SpringBoot/11-SpringBoot-@EnableAutoConfiguration/">(11) SpringBoot @EnableAutoConfiguration</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/20/SpringBoot/11-SpringBoot-@EnableAutoConfiguration/" class="archive-article-date">
+  	<time datetime="2019-05-20T02:25:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Spring Boot 启动类上一个 @SpringBootApplication 注解是</p>
+<ul>
+<li>@SpringBootConfiguration</li>
+<li>@EnableAutoConfiguration</li>
+<li>@ComponentScan</li>
+</ul>
+<p>三个注解组成的一个复合注解。其中 @SpringBootConfiguration 其实也是和@Configuration 注解组成的一个组合注解，功能也是和 @Configuration 相同；@ComponentScan 这个注解是标注需要扫描的包。今天着重说一下 @EnableAutoConfiguration 注解。</p>
+        
+          <a class="article-more-a" href="/2019/05/20/SpringBoot/11-SpringBoot-@EnableAutoConfiguration/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/20/SpringBoot/11-SpringBoot-@EnableAutoConfiguration/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-SpringBoot/10-SpringBoot-@Enable 与@Import 注解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/20/SpringBoot/10-SpringBoot-@Enable 与@Import 注解/">(10) SpringBoot @Enable* 与@ Import注解</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/20/SpringBoot/10-SpringBoot-@Enable 与@Import 注解/" class="archive-article-date">
+  	<time datetime="2019-05-20T02:23:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>SpringBoot 的自动配置如此强大，比如我们经常使用的@Enable* 注解来开启对某方面的支持。那么@Enable* 注解的原理是什么呢？</p>
+<h3 id="一、-Enable-注解与-Import-注解之间的关系"><a href="#一、-Enable-注解与-Import-注解之间的关系" class="headerlink" title="一、@Enable* 注解与 @Import 注解之间的关系"></a>一、@Enable* 注解与 @Import 注解之间的关系</h3>
+        
+          <a class="article-more-a" href="/2019/05/20/SpringBoot/10-SpringBoot-@Enable 与@Import 注解/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/20/SpringBoot/10-SpringBoot-@Enable 与@Import 注解/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-SpringBoot/09-SpringBoot-之条件注解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/20/SpringBoot/09-SpringBoot-之条件注解/">(09) SpringBoot 之条件注解</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/20/SpringBoot/09-SpringBoot-之条件注解/" class="archive-article-date">
+  	<time datetime="2019-05-20T02:22:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Spring Boot 神奇的自动配置，主要依靠大量的条件注解来使用配置自动化。</p>
+<p>根据满足某一个特定条件创建一个特定的Bean。比如说，在某些系统变量下创建Bean，或者只有在某个Bean创建后才去创建另外一个Bean. 就是根据条件来控制Bean的创建行为，可以利用该特性来进行一些自动配置。</p>
+<h3 id="一、常用的条件注解"><a href="#一、常用的条件注解" class="headerlink" title="一、常用的条件注解"></a>一、常用的条件注解</h3><ul>
+<li>@Conditional 依赖的条件</li>
+<li>@ConditionalOnBean  在某个Bean存在的条件下</li>
+<li>@ConditionalOnMissingBean 在某个Bean不存在的条件下</li>
+<li>@ConditionalOnClass  在某个Class存在的条件下</li>
+<li>@ConditionalOnMissingClass  在某个Class不存在的条件下
+        
+          <a class="article-more-a" href="/2019/05/20/SpringBoot/09-SpringBoot-之条件注解/#more">more >></a>
+        
+      
+
+      
+    </li></ul></div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/20/SpringBoot/09-SpringBoot-之条件注解/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-SpringBoot/08-SpringBoot-之组合注解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/20/SpringBoot/08-SpringBoot-之组合注解/">(08) SpringBoot 之组合注解</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/20/SpringBoot/08-SpringBoot-之组合注解/" class="archive-article-date">
+  	<time datetime="2019-05-20T02:22:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>SpringBoot应用开发，会大量的使用注解，有些注解会经常一起使用，如果能通过一个组合注解进行包装则能够简化代码，并且还会避免因为少了某些注解而报错</p>
+<h3 id="一、-常见的组合注解"><a href="#一、-常见的组合注解" class="headerlink" title="一、 常见的组合注解"></a>一、 常见的组合注解</h3><h4 id="1-SpringBootApplication"><a href="#1-SpringBootApplication" class="headerlink" title="1. @SpringBootApplication"></a>1. @SpringBootApplication</h4><p>该注解是SpringBoot项目的核心注解，该注解包含：</p>
+<ul>
+<li>@SpringBootConfiguration</li>
+<li>@EnableAutoConfiguration</li>
+<li>@ComponentScan
+        
+          <a class="article-more-a" href="/2019/05/20/SpringBoot/08-SpringBoot-之组合注解/#more">more >></a>
+        
+      
+
+      
+    </li></ul></div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/20/SpringBoot/08-SpringBoot-之组合注解/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-SpringBoot/07-SpringBoot-如何让yml-properties配置文件有提示" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/20/SpringBoot/07-SpringBoot-如何让yml-properties配置文件有提示/">(07) SpringBoot 如何让yml,properties配置文件有提示</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/20/SpringBoot/07-SpringBoot-如何让yml-properties配置文件有提示/" class="archive-article-date">
+  	<time datetime="2019-05-20T02:21:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我们在引用spring官方start库或者第三方start库时，在写配置文件时idea总是能精准的提示，并且鼠标可以点过去看具体属性或者类，而自己写的配置文件idea只会有“Cannot resolve configuration property …”这样的提示。</p>
+<p>我们现在也去配置我们自己的配置文件让idea知道这些配置文件是干什么的。</p>
+<h3 id="一、需要的注解"><a href="#一、需要的注解" class="headerlink" title="一、需要的注解"></a>一、需要的注解</h3>
+        
+          <a class="article-more-a" href="/2019/05/20/SpringBoot/07-SpringBoot-如何让yml-properties配置文件有提示/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/20/SpringBoot/07-SpringBoot-如何让yml-properties配置文件有提示/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-SpringBoot/06-SpringBoot-Aop的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/20/SpringBoot/06-SpringBoot-Aop的使用/">(06) SpringBoot Aop的使用</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/20/SpringBoot/06-SpringBoot-Aop的使用/" class="archive-article-date">
+  	<time datetime="2019-05-20T02:20:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>AOP：面向切面编程，相对于OOP面向对角编程<br>Spring的AOP的存在目的是为了解耦。AOP可以让一组类共享相同的行为。在OOP中只能继承和实现接口，且类继承只能单继承，阻碍更多行为添加到一组类上，AOP弥补了OOP的不足。</p>
+<p>还有就是为了清晰的逻辑，让业务逻辑关注业务本身，不用去关心其它的事情，比如事务。</p>
+<p>Spring的AOP是通过JDK的动态代理和CGLIB实现的。</p>
+<h3 id="一、AOP的术语："><a href="#一、AOP的术语：" class="headerlink" title="一、AOP的术语："></a>一、AOP的术语：</h3>
+        
+          <a class="article-more-a" href="/2019/05/20/SpringBoot/06-SpringBoot-Aop的使用/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/20/SpringBoot/06-SpringBoot-Aop的使用/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -324,6 +1056,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
